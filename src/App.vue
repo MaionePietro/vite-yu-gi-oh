@@ -1,13 +1,21 @@
 <script>
+import HeadApp from './components/HeadApp.vue';
+import MainApp from './components/MainApp.vue';
+import Card from './components/CardGame.vue'
 export default {
-    
+    components:{
+        HeadApp,
+        MainApp,
+        Card
+    }
 }
 </script>
 
 <template>
-
+    <MainApp />
+    <Card></Card>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 
 </style>
