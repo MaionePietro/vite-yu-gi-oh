@@ -12,10 +12,11 @@ export default {
 </script>
 
 <template>
+    <!-- <HeadApp></HeadApp> -->
     <MainApp />
-    <Card></Card>
+    <!-- <Card></Card> -->
 </template>
 
 <style lang="scss" scoped>
-
+@use'./style/general.scss'
 </style>
