@@ -6,19 +6,17 @@ export default {
 
 <template lang="">
     <div class="header-bar d-flex align-items-center">
-        <div class="logo">
-            <img src="/logo.png" alt="">
-        </div>
-        <h1>Yu-Gi-Oh</h1>
+        <img src="/logo.webp" alt="" class="logo">
+        <h1 >Yu-Gi-Oh API</h1>
     </div>
 </template>
 
 <style lang="scss" scoped>
     .header-bar{
-        height: 70px;
+        padding: 50px;
+        gap: 30px;
         .logo{
-            object-fit: cover;
-            object-position: center; 
+            width: 150px;
         }
     }
 </style>
