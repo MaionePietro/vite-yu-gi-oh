@@ -14,7 +14,6 @@ export default {
 <template>
     <HeadApp></HeadApp>
     <MainApp />
-    <!-- <Card></Card> -->
 </template>
 
 <style lang="scss" scoped>

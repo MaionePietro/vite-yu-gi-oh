@@ -8,18 +8,16 @@ export default {
     },
     data() {
         return {
-            store
-            
+            store  
         }
     },
     methods: {
         fetchCharacters() {
             axios
-                .get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
+                .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=50&offset=0')
                 .then((res) => {
-                    console.log(res.data.data.name)
-                    this.store.characters = res.data
-                    //console.log("store: "+this.store.characters.data[0].card_images.image_url)
+                    console.log(res.data)
+                    this.store.characters = res.data.data
                 })
         }
     },
@@ -43,7 +41,7 @@ export default {
                 </ul>
             </div>
             <div class="container p-5 grid-container">
-                <CardGame :deskOfCards="store" />
+                <CardGame :CardsStore="store"/>
             </div>
         </div>
     </div>
