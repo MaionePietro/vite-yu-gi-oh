@@ -19,7 +19,7 @@ export default {
                 .then((res) => {
                     console.log(res.data.data.name)
                     this.store.characters = res.data
-                    console.log("store: "+this.store.characters.data[0].card_images.image_url)
+                    //console.log("store: "+this.store.characters.data[0].card_images.image_url)
                 })
         }
     },
