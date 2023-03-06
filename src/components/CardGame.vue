@@ -1,10 +1,10 @@
 <template lang="">
     <div v-for="character in store.characters">
         <div class="card text-center" style="width: 12rem;">
-            <img :src="deskOfCards.characters.data[n].card_images.image_url" class="card-img-top" alt="carta">
+            <img :src="deskOfCards.characters.data[character].card_images.image_url" class="card-img-top" alt="carta">
             <div class="card-body">
-                <p class="card-text">{{deskOfCards.characters.data[n].name}}</p>
-                <p class="card-text">{{deskOfCards.characters.data[n].archetype}}</p>
+                <p class="card-text">{{deskOfCards.characters.data[character].name}}</p>
+                <p class="card-text">{{deskOfCards.characters.data[character].archetype}}</p>
             </div>
         </div>
     </div>
