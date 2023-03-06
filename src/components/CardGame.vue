@@ -1,6 +1,6 @@
 <template lang="">
     <div v-for="character in store.characters">
-        <div class="card text-center" style="width: 12rem;">
+        <div class="card text-center box-orange" style="width: 12rem;">
             <img :src="character.card_images[0].image_url" class="card-img-top" alt="carta">
             <div class="card-body">
                 <p class="card-text">{{character.name}}</p>
@@ -19,4 +19,8 @@ export default {
     }
 }
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.box-orange{
+    background-color: orange;
+}
+</style>

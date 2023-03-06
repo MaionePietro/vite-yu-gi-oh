@@ -1,10 +1,12 @@
 <script>
 import CardGame from './CardGame.vue';
+import FilterCards from './FilterCards.vue';
 import axios from 'axios';
 import store from '../store'
 export default {
     components: {
-        CardGame
+        CardGame,
+        FilterCards
     },
     data() {
         return {
@@ -13,12 +15,28 @@ export default {
     },
     methods: {
         fetchCharacters() {
+            const NameCards = this.store.NameCards;
+            const QuantityOfCards = this.store.QuantityOfCards;
+
             axios
-                .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=50&offset=0')
-                .then((res) => {
-                    console.log(res.data)
-                    this.store.characters = res.data.data
+                .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0&fname=dragon',{
+                    params: {
+                        fname: NameCards,
+                        num: QuantityOfCards,
+                    }
                 })
+                .then((res) => {
+                    console.log('chiamata oggetto: '+res.data)
+                    this.store.characters = res.data.data
+                    console.log('cerca nome: '+ NameCards +'  quantità: '+ QuantityOfCards)
+                }).catch((error) => {
+                    console.log(error)
+                    this.store.characters = []
+                    this.store.QuantityOfCards = 0
+                })
+        },
+        search(){
+            
         }
     },
     created() {
@@ -30,16 +48,7 @@ export default {
 <template lang="">
     <div class="box-orange">
         <div class="container p-4">
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown button
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-            </div>
+            <FilterCards @searchText="fetchCharacters"/>
             <div class="container p-5 grid-container">
                 <CardGame />
             </div>
