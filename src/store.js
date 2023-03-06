@@ -7,4 +7,3 @@ const store = reactive({
 })
 
 export default store
-

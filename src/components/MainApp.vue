@@ -41,7 +41,7 @@ export default {
                 </ul>
             </div>
             <div class="container p-5 grid-container">
-                <CardGame :CardsStore="store"/>
+                <CardGame />
             </div>
         </div>
     </div>
